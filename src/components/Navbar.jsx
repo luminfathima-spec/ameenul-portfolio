@@ -140,8 +140,9 @@ export default function Navbar() {
               href={personalInfo.resumePath}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-[#7952C7] bg-[#EDE5FF] hover:bg-[#7952C7] hover:text-white rounded-lg border border-[#D7C7F4] transition-all duration-200 shadow-sm hover:shadow"
-              aria-label="View or download resume PDF"
+              download="Ameenul_Lumin_Fathima_Resume.pdf"
+              className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-[#7952C7] bg-[#EDE5FF] hover:bg-[#7952C7] hover:text-white rounded-xl border border-[#D7C7F4] transition-all duration-200 shadow-sm hover:shadow"
+              aria-label="Download Ameenul Lumin Fathima M. Resume PDF"
             >
               <FileText className="w-4 h-4" />
               <span>Resume</span>
@@ -155,6 +156,7 @@ export default function Navbar() {
               href={personalInfo.resumePath}
               target="_blank"
               rel="noopener noreferrer"
+              download="Ameenul_Lumin_Fathima_Resume.pdf"
               className="p-2 text-xs font-semibold text-[#7952C7] bg-[#EDE5FF] rounded-lg border border-[#D7C7F4]"
               aria-label="Resume"
             >
@@ -212,6 +214,7 @@ export default function Navbar() {
                   href={personalInfo.resumePath}
                   target="_blank"
                   rel="noopener noreferrer"
+                  download="Ameenul_Lumin_Fathima_Resume.pdf"
                   onClick={() => setIsOpen(false)}
                   className="w-full flex items-center justify-center gap-2 px-5 py-3 text-base font-semibold text-white bg-[#7952C7] hover:bg-[#56358E] rounded-xl shadow-soft transition-colors"
                 >
@@ -227,3 +230,4 @@ export default function Navbar() {
     </header>
   );
 }
+

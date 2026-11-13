@@ -7,25 +7,24 @@
 
 export const personalInfo = {
   name: "Ameenul Lumin Fathima M.",
-  title: "Software Developer",
-  subtitle: "MCA Student | Java & Full-Stack Development Enthusiast",
+  title: "Software Developer | MCA Student | Java & Full-Stack Development Enthusiast",
+  subtitle: "Software Developer | MCA Student | Java & Full-Stack Development Enthusiast",
   greeting: "Hello, I'm",
   headline: "Software Developer",
-  supportingHeadline: "Turning ideas into practical digital solutions.",
+  supportingHeadline: "MCA Student | Java & Full-Stack Development Enthusiast",
   availability: "Open to learning opportunities and software development opportunities.",
   
   introduction: 
-    "I am an MCA student passionate about Java development, full-stack technologies, cybersecurity and emerging AI applications. I enjoy learning, building and solving real-world problems through technology.",
+    "I am an MCA student and aspiring software developer with a strong interest in Java development, full-stack technologies, cybersecurity and artificial intelligence. I enjoy building practical applications, exploring emerging technologies and solving real-world problems through software development. I continuously work on strengthening my technical knowledge through academic projects and hands-on learning.",
   
   aboutMe: [
-    "I am currently pursuing my Master of Computer Applications (MCA) at Presidency University.",
-    "My journey in computer applications has helped me develop an interest in programming, application development and emerging technologies.",
-    "I enjoy working on practical projects that combine software development with real-world problem-solving.",
-    "My areas of interest include Java development, full-stack development, cybersecurity, computer vision and Generative AI.",
-    "I believe in continuous learning, experimentation and building useful technology solutions."
+    "I am an MCA student and aspiring software developer with a strong interest in Java development, full-stack technologies, cybersecurity and artificial intelligence.",
+    "I enjoy building practical applications, exploring emerging technologies and solving real-world problems through software development.",
+    "I continuously work on strengthening my technical knowledge through academic projects and hands-on learning."
   ],
 
   profileImage: "/images/profile.jpg",
+  profileImageFallback: "/images/profile.jpeg",
   resumePath: "/resume/resume.pdf",
 
   contact: {
@@ -50,11 +49,11 @@ export const educationList = [
     id: "mca",
     degree: "Master of Computer Applications (MCA)",
     institution: "Presidency University",
-    status: "Currently Pursuing",
+    status: "Currently pursuing",
     isCurrent: true,
-    highlight: "Advanced Computer Applications & Software Engineering",
+    highlight: "Advanced Software Engineering & Applied Computing",
     description:
-      "Deepening expertise in software engineering principles, enterprise Java paradigms, scalable web architectures, modern cybersecurity best practices, and AI applications.",
+      "Deepening core competencies in enterprise Java design, scalable full-stack web architectures, secure system design, machine learning, and emerging AI technologies.",
   },
   {
     id: "bca",
@@ -62,9 +61,9 @@ export const educationList = [
     institution: "Vijayanagara Sri Krishnadevaraya University (VSKU)",
     status: "Completed",
     isCurrent: false,
-    highlight: "Core Computer Science & Web Foundations",
+    highlight: "Foundational Computer Science & Software Development",
     description:
-      "Established core competencies in data structures, relational database management, object-oriented programming, systems analysis, and foundational web design.",
+      "Established foundational knowledge in data structures, algorithms, relational database management systems (RDBMS), object-oriented programming, and web development fundamentals.",
   }
 ];
 
@@ -75,18 +74,17 @@ export const projectList = [
     category: "Generative AI | Cybersecurity",
     status: "In Progress",
     description:
-      "A Generative AI-powered cybersecurity incident response platform designed to help analyze security incidents and provide contextual security insights.",
+      "A cybersecurity incident response platform designed to help analyze security incidents and support incident investigation using Generative AI.",
     technologies: ["Java", "Python", "FastAPI", "Google Gemini API"],
     keyFeatures: [
-      "Security incident analysis",
-      "AI-assisted incident response",
-      "Cybersecurity investigation",
-      "Contextual threat explanations",
+      "Security incident telemetry analysis",
+      "AI-assisted incident triage & investigation",
+      "Contextual threat and vulnerability explanations",
+      "Automated incident remediation suggestions",
     ],
     repository: "https://github.com/luminfathima-spec/SentinelAI-X",
-    liveDemo: null, // Only displayed when link exists
+    liveDemo: null, // Displayed only when verified link exists
     featured: true,
-    accentColor: "from-purple-500/10 to-indigo-500/10",
     overview:
       "SentinelAI-X is an intelligent cybersecurity investigation assistant that bridges raw security telemetry with contextual Generative AI analysis to streamline incident triaging and response workflows.",
     problemStatement:
@@ -100,19 +98,18 @@ export const projectList = [
     category: "Full-Stack Web Development",
     status: "In Progress",
     description:
-      "A MERN-stack food rescue platform designed to connect food donors, receivers and delivery partners to reduce food wastage and improve food distribution.",
+      "MERN-based food rescue platform connecting food donors, receivers and delivery partners to reduce food wastage and improve food distribution.",
     technologies: ["MongoDB", "Express.js", "React.js", "Node.js"],
     keyFeatures: [
-      "Role-based authentication",
-      "Food donation management",
-      "Receiver food requests",
-      "Delivery partner workflows",
-      "Smart food matching",
+      "Role-based authentication & permissions",
+      "Real-time food donation listings & claims",
+      "Receiver food requests & status tracking",
+      "Delivery partner logistics & distribution workflows",
+      "Smart geolocation-aware food matching",
     ],
     repository: null,
     liveDemo: null,
     featured: true,
-    accentColor: "from-emerald-500/10 to-teal-500/10",
     overview:
       "ResQMeal is a social impact web application connecting surplus food providers (restaurants, caterers, supermarkets) with local shelters, NGOs, and verified volunteer delivery partners in real time.",
     problemStatement:
@@ -121,24 +118,23 @@ export const projectList = [
       "An end-to-end MERN web architecture featuring distinct authenticated portals for donors, receivers, and delivery volunteers, complete with automated matching algorithms and donation dispatch tracking.",
   },
   {
-    id: "network-intrusion-detection",
-    title: "Real-World Network Intrusion Detection System",
+    id: "real-world-nids",
+    title: "Real-World NIDS",
+    subtitle: "Network Intrusion Detection System",
     category: "Cybersecurity | Machine Learning",
     status: "Academic Project",
     description:
-      "A machine-learning-based network intrusion detection system designed to identify suspicious network traffic and classify potential cyberattacks.",
+      "A machine-learning-based network intrusion detection project designed to classify suspicious network activity and generate alerts.",
     technologies: ["Python", "Scikit-learn", "Random Forest", "Decision Tree", "NSL-KDD dataset"],
     keyFeatures: [
-      "Network traffic analysis",
-      "Attack classification",
-      "Intrusion detection",
-      "Security alerts",
-      "JSON logging",
+      "Network traffic anomaly preprocessing",
+      "Multi-class cyberattack classification",
+      "Ensemble learning with Random Forest & Decision Tree",
+      "Structured security alerts & JSON event logging",
     ],
     repository: null,
     liveDemo: null,
     featured: true,
-    accentColor: "from-blue-500/10 to-cyan-500/10",
     overview:
       "An applied machine learning system that trains predictive classification algorithms on standardized network telemetry to distinguish benign network activity from malicious intrusion vectors.",
     problemStatement:
@@ -155,15 +151,14 @@ export const projectList = [
       "A cake e-commerce website that provides product browsing and online shopping functionality.",
     technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"],
     keyFeatures: [
-      "Interactive product catalog",
-      "Shopping cart management",
-      "Relational database structure",
-      "Order status handling",
+      "Dynamic product catalog & categorization",
+      "Shopping cart management & checkout flow",
+      "Structured relational database schema",
+      "Order status handling & administration",
     ],
     repository: null,
     liveDemo: null,
     featured: false,
-    accentColor: "from-pink-500/10 to-rose-500/10",
     overview:
       "Luxe Cake is a boutique bakery e-commerce portal built to give local confections a modern digital storefront with user order management and an administrative catalog system.",
     problemStatement:
@@ -175,20 +170,19 @@ export const projectList = [
     id: "genai-borderguard",
     title: "GenAI BorderGuard",
     category: "Generative AI | Computer Vision",
-    status: "In Development / Proposed",
+    status: "Concept / In Development",
     description:
-      "An intelligent border surveillance concept exploring AI-assisted monitoring, contextual incident analysis and human-assisted security workflows.",
-    technologies: ["Python", "Gemini", "Computer Vision"],
+      "Proposed Generative AI-based border surveillance concept involving computer vision and Gemini models.",
+    technologies: ["Python", "Google Gemini", "Computer Vision"],
     keyFeatures: [
-      "Intelligent surveillance concept",
-      "Contextual incident reasoning",
-      "Human-in-the-loop workflows",
-      "Multi-modal threat assessment",
+      "Intelligent border surveillance concept",
+      "Edge computer vision anomaly detection",
+      "Gemini multimodal scene description",
+      "Human-in-the-loop decision support workflows",
     ],
     repository: null,
     liveDemo: null,
     featured: false,
-    accentColor: "from-violet-500/10 to-purple-500/10",
     overview:
       "A conceptual surveillance intelligence architecture pairing continuous visual sensor feeds with multi-modal reasoning models to deliver high-level situational awareness to security personnel.",
     problemStatement:
@@ -211,7 +205,7 @@ export const skillCategories = [
     ]
   },
   {
-    title: "Frontend Development",
+    title: "Frontend",
     iconName: "Layout",
     skills: [
       { name: "HTML", level: "Semantic Markup", tag: "Structure" },
@@ -221,7 +215,7 @@ export const skillCategories = [
     ]
   },
   {
-    title: "Backend Development",
+    title: "Backend",
     iconName: "Server",
     skills: [
       { name: "Node.js", level: "Runtime", tag: "JavaScript Server" },
@@ -240,61 +234,96 @@ export const skillCategories = [
     ]
   },
   {
-    title: "AI, Machine Learning and Security",
+    title: "AI & Cybersecurity",
     iconName: "BrainCircuit",
     skills: [
-      { name: "Scikit-learn", level: "ML Library", tag: "Predictive Models" },
-      { name: "Computer Vision", level: "Discipline", tag: "Image Processing" },
       { name: "Generative AI", level: "Emerging Tech", tag: "LLMs & Multimodal" },
-      { name: "Retrieval-Augmented Generation (RAG)", level: "Architecture", tag: "Knowledge Retrieval" },
+      { name: "RAG", level: "Architecture", tag: "Knowledge Retrieval" },
+      { name: "Computer Vision", level: "Discipline", tag: "Image Processing" },
+      { name: "Scikit-learn", level: "ML Library", tag: "Predictive Models" },
       { name: "Cybersecurity", level: "Specialization", tag: "Threat Analysis & Defense" },
     ]
   },
   {
-    title: "Tools and Platforms",
+    title: "Tools",
     iconName: "Wrench",
     skills: [
       { name: "Git", level: "Version Control", tag: "Distributed VCS" },
       { name: "GitHub", level: "Collaboration", tag: "Code Hosting & CI" },
-      { name: "Visual Studio Code", level: "IDE", tag: "Development" },
+      { name: "VS Code", level: "IDE", tag: "Development" },
       { name: "IntelliJ IDEA", level: "Java IDE", tag: "Enterprise Dev" },
       { name: "Antigravity IDE", level: "AI Agentic IDE", tag: "Agentic Workflows" },
     ]
   }
 ];
 
+export const certificateCategories = [
+  "All",
+  "AI & Generative AI",
+  "Academic Learning",
+  "Professional Learning",
+  "Events & Participation"
+];
+
 export const certificationList = [
   {
-    id: "cert-java",
-    title: "Java Programming Fundamentals",
-    issuer: "Infosys Springboard",
-    image: "/certificates/java-certificate.png",
-    issueDate: null,
-    credentialUrl: null,
-    badgeText: "Fundamental Certification",
-    description:
-      "Covers fundamental Java syntax, object-oriented principles, control structures, collection frameworks, and clean code conventions.",
-  },
-  {
-    id: "cert-gemini",
+    id: "cert-gemini-rich-docs",
     title: "Inspect Rich Documents with Gemini Multimodality and Multimodal RAG",
-    issuer: "Google Cloud Skills Boost",
-    image: "/certificates/gemini-certificate.png",
-    issueDate: null,
-    credentialUrl: null,
-    badgeText: "Generative AI & Multimodal RAG",
+    issuer: "Google Cloud",
+    category: "AI & Generative AI",
+    badgeText: "Skill Badge · Intermediate",
+    file: "/certificates/gemini/gemini-badge-2.png",
+    format: "image",
+    details: "Machine Learning & AI · Issued by Google Cloud",
     description:
-      "Hands-on completion in analyzing multimodal documents, extracting structured intelligence with Gemini models, and implementing retrieval-augmented generation pipelines.",
+      "Hands-on expertise in analyzing rich documents, extracting multimodal data, and implementing Retrieval-Augmented Generation (RAG) pipelines using Google Gemini models.",
   },
   {
-    id: "cert-blockchain",
-    title: "The Blockchain Trilemma",
-    issuer: "Certified Technical Course",
-    image: "/certificates/blockchain-certificate.png",
-    issueDate: null,
-    credentialUrl: null,
-    badgeText: "Decentralized Systems",
+    id: "cert-gemini-prompt-design",
+    title: "Prompt Design in Vertex AI",
+    issuer: "Google Cloud",
+    category: "AI & Generative AI",
+    badgeText: "Skill Badge · Introductory",
+    file: "/certificates/gemini/gemini-badge-1.png",
+    format: "image",
+    details: "Machine Learning & AI · Issued by Google Cloud",
     description:
-      "Study of the core challenges in decentralized architectures balancing security, decentralization, and scalability across distributed ledger protocols.",
+      "Practical mastery of prompt engineering principles, multimodal prompting, and model parameter tuning using Vertex AI and Gemini foundation models.",
+  },
+  {
+    id: "cert-nptel-km",
+    title: "Knowledge Management",
+    issuer: "NPTEL (IIT Kharagpur)",
+    category: "Academic Learning",
+    badgeText: "Elite Online Certification",
+    file: "/certificates/nptel-knowledge-management.pdf",
+    format: "pdf",
+    details: "Score: 65% (Elite) · Jul-Sep 2026 · Roll: NPTEL26MG101S352201646",
+    description:
+      "8-week certified course funded by the Ministry of Education (MoE), Govt. of India and conducted by Indian Institute of Technology Kharagpur, completed with an Elite score.",
+  },
+  {
+    id: "cert-digital-101",
+    title: "Digital 101 Journey",
+    issuer: "FutureSkills Prime (NASSCOM & MeitY)",
+    category: "Professional Learning",
+    badgeText: "FS Prime Certificate",
+    file: "/certificates/digital-101-fs-prime.pdf",
+    format: "pdf",
+    details: "Date of Issue: 15/12/2022 · Certificate ID: FSP/2022/12/390657",
+    description:
+      "Professional skilling initiative by MeitY and NASSCOM IT-ITeS Sector Skills Council covering foundational digital competencies and emerging technology paradigms.",
+  },
+  {
+    id: "cert-ekathva-2025",
+    title: "EKATHVA TECH-FEST 2k25",
+    issuer: "Department of MCA, Kishkinda University",
+    category: "Events & Participation",
+    badgeText: "Participation Certificate",
+    file: "/certificates/ekathva-tech-fest-2k25.pdf",
+    format: "pdf",
+    details: "Event Date: 28th March 2025 · Department of MCA",
+    description:
+      "Certificate of Participation in the technical symposium EKATHVA TECH-FEST 2k25 conducted by the Department of Master of Computer Applications at Kishkinda University.",
   }
 ];

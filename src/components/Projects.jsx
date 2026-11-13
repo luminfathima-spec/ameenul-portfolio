@@ -45,10 +45,10 @@ export default function Projects() {
               <ShieldAlert className="w-8 h-8" />
             </div>
             <span className="text-xs font-bold text-[#56358E] tracking-wider uppercase">
-              AI-Powered Incident Response
+              AI Incident Response Platform
             </span>
             <span className="text-[11px] text-[#68677A] font-medium mt-0.5">
-              Java &bull; FastAPI &bull; Google Gemini API
+              Java &bull; Python &bull; FastAPI &bull; Gemini API
             </span>
           </div>
         );
@@ -66,6 +66,7 @@ export default function Projects() {
             </span>
           </div>
         );
+      case 'real-world-nids':
       case 'network-intrusion-detection':
         return (
           <div className="w-full h-44 bg-gradient-to-br from-[#EFF6FF] via-[#DBEAFE]/60 to-[#F7F4FF] border-b border-[#E8E2F1] flex flex-col items-center justify-center p-6 relative overflow-hidden">
@@ -73,10 +74,10 @@ export default function Projects() {
               <Network className="w-8 h-8" />
             </div>
             <span className="text-xs font-bold text-blue-900 tracking-wider uppercase">
-              ML Traffic Anomaly Classifier
+              ML Network Intrusion Detection
             </span>
             <span className="text-[11px] text-[#68677A] font-medium mt-0.5">
-              Random Forest &bull; Decision Tree &bull; NSL-KDD
+              Scikit-learn &bull; Random Forest &bull; NSL-KDD
             </span>
           </div>
         );
@@ -101,10 +102,10 @@ export default function Projects() {
               <ScanSearch className="w-8 h-8" />
             </div>
             <span className="text-xs font-bold text-[#56358E] tracking-wider uppercase">
-              Vision &amp; Multi-modal Surveillance
+              Vision &amp; Multimodal Surveillance
             </span>
             <span className="text-[11px] text-[#68677A] font-medium mt-0.5">
-              Python &bull; Gemini Multimodal &bull; Computer Vision
+              Python &bull; Google Gemini &bull; Computer Vision
             </span>
           </div>
         );
@@ -121,24 +122,24 @@ export default function Projects() {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EDE5FF] text-[#56358E] text-xs font-semibold uppercase tracking-wider mb-3">
             <FolderGit2 className="w-3.5 h-3.5 text-[#7952C7]" />
-            <span>Portfolio Highlights</span>
+            <span>Featured Solutions</span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-[#202033] tracking-tight">
-            Featured Projects
+            Projects
           </h2>
           <p className="mt-3 text-base sm:text-lg text-[#68677A]">
-            Some of the applications and technical solutions I have worked on.
+            Technical applications, full-stack architectures, and AI-driven platforms I have developed and designed.
           </p>
           <div className="w-16 h-1 bg-[#7952C7] mx-auto mt-4 rounded-full" />
         </div>
 
         {/* Filter / View Tabs */}
         <div className="flex items-center justify-center mb-12">
-          <div className="bg-white p-1 rounded-xl border border-[#E8E2F1] shadow-soft-sm inline-flex">
+          <div className="bg-white p-1 rounded-2xl border border-[#E8E2F1] shadow-soft-sm inline-flex">
             <button
               type="button"
               onClick={() => setFilter('featured')}
-              className={`px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all ${
+              className={`px-4 py-2 text-xs sm:text-sm font-semibold rounded-xl transition-all ${
                 filter === 'featured'
                   ? 'bg-[#7952C7] text-white shadow-sm'
                   : 'text-[#68677A] hover:text-[#202033]'
@@ -149,7 +150,7 @@ export default function Projects() {
             <button
               type="button"
               onClick={() => setFilter('all')}
-              className={`px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all ${
+              className={`px-4 py-2 text-xs sm:text-sm font-semibold rounded-xl transition-all ${
                 filter === 'all'
                   ? 'bg-[#7952C7] text-white shadow-sm'
                   : 'text-[#68677A] hover:text-[#202033]'
@@ -165,7 +166,7 @@ export default function Projects() {
           {displayedProjects.map((project) => (
             <div
               key={project.id}
-              className="group bg-white rounded-2xl border border-[#E8E2F1] shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col overflow-hidden hover:-translate-y-1"
+              className="group bg-white rounded-3xl border border-[#E8E2F1] shadow-card hover:shadow-card-hover transition-all duration-300 flex flex-col overflow-hidden hover:-translate-y-1"
             >
               {/* Abstract Technical Illustration */}
               {renderThumbnail(project)}
@@ -179,7 +180,7 @@ export default function Projects() {
                     <span className="text-[11px] font-bold text-[#7952C7] uppercase tracking-wider bg-[#EDE5FF] px-2.5 py-0.5 rounded-md">
                       {project.category}
                     </span>
-                    <span className="text-[11px] font-medium text-[#68677A] bg-[#F7F4FF] px-2.5 py-0.5 rounded-md border border-[#E8E2F1]">
+                    <span className="text-[11px] font-semibold text-[#56358E] bg-[#F7F4FF] px-2.5 py-0.5 rounded-md border border-[#E8E2F1]">
                       {project.status}
                     </span>
                   </div>
@@ -212,7 +213,7 @@ export default function Projects() {
                     {project.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="text-[11px] font-medium px-2 py-0.5 rounded bg-[#FAF8FF] text-[#56358E] border border-[#E8E2F1]"
+                        className="text-[11px] font-medium px-2 py-0.5 rounded-lg bg-[#FAF8FF] text-[#56358E] border border-[#E8E2F1]"
                       >
                         {tech}
                       </span>
@@ -226,20 +227,20 @@ export default function Projects() {
                   <button
                     type="button"
                     onClick={() => handleOpenDetails(project)}
-                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#7952C7] hover:text-[#56358E] py-2 px-3 rounded-lg hover:bg-[#EDE5FF]/60 transition-colors"
+                    className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-[#7952C7] hover:text-[#56358E] py-2 px-3 rounded-xl hover:bg-[#EDE5FF]/60 transition-colors"
                   >
                     <Eye className="w-4 h-4" />
                     <span>View Details</span>
                   </button>
 
                   <div className="flex items-center gap-2">
-                    {/* Repository button - ONLY rendered when repository exists */}
+                    {/* Repository button - ONLY rendered when confirmed repository exists */}
                     {project.repository && (
                       <a
                         href={project.repository}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 rounded-lg text-[#202033] hover:text-[#7952C7] hover:bg-[#F7F4FF] border border-[#E8E2F1] transition-colors"
+                        className="p-2 rounded-xl text-[#202033] hover:text-[#7952C7] hover:bg-[#F7F4FF] border border-[#E8E2F1] transition-colors"
                         aria-label={`View ${project.title} on GitHub`}
                         title="View GitHub Repository"
                       >
@@ -253,7 +254,7 @@ export default function Projects() {
                         href={project.liveDemo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="p-2 rounded-lg text-[#7952C7] hover:bg-[#EDE5FF] border border-[#D7C7F4] transition-colors"
+                        className="p-2 rounded-xl text-[#7952C7] hover:bg-[#EDE5FF] border border-[#D7C7F4] transition-colors"
                         aria-label={`Open live demo for ${project.title}`}
                         title="Live Demo"
                       >
@@ -274,7 +275,7 @@ export default function Projects() {
             <button
               type="button"
               onClick={() => setFilter('all')}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-[#56358E] bg-white hover:bg-[#FAF8FF] border border-[#D7C7F4] shadow-soft-sm hover:shadow transition-all"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-2xl font-semibold text-[#56358E] bg-white hover:bg-[#FAF8FF] border border-[#D7C7F4] shadow-soft-sm hover:shadow transition-all"
             >
               <span>Explore All {projectList.length} Technical Projects</span>
               <ArrowRight className="w-4 h-4 text-[#7952C7]" />

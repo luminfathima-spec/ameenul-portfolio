@@ -18,31 +18,26 @@ export default function About() {
       title: "Java Development",
       description: "Building structured, robust backend applications and object-oriented architectures.",
       icon: Code,
-      accent: "bg-purple-50 text-[#7952C7] border-purple-100",
     },
     {
       title: "Full-Stack Development",
       description: "Crafting end-to-end web applications with modern frontend frameworks and scalable APIs.",
       icon: Cpu,
-      accent: "bg-indigo-50 text-[#56358E] border-indigo-100",
     },
     {
       title: "Cybersecurity",
       description: "Investigating threat vectors, network intrusion patterns, and AI-assisted incident response.",
       icon: ShieldCheck,
-      accent: "bg-violet-50 text-[#7952C7] border-violet-100",
     },
     {
       title: "Computer Vision",
       description: "Exploring visual feature extraction, image classification, and automated camera feeds.",
       icon: Eye,
-      accent: "bg-purple-50 text-[#56358E] border-purple-100",
     },
     {
-      title: "Generative AI & RAG",
+      title: "Artificial Intelligence & RAG",
       description: "Leveraging LLMs, multi-modal contextual reasoning, and retrieval pipelines for practical tools.",
       icon: Bot,
-      accent: "bg-indigo-50 text-[#7952C7] border-indigo-100",
     },
   ];
 
@@ -82,10 +77,10 @@ export default function About() {
           
           {/* Main Story Narrative */}
           <div className="lg:col-span-7 space-y-6 text-left">
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-[#E8E2F1] shadow-card">
+            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E8E2F1] shadow-card">
               
               <div className="flex items-center gap-3 mb-6 pb-4 border-b border-[#E8E2F1]">
-                <div className="w-10 h-10 rounded-xl bg-[#EDE5FF] flex items-center justify-center text-[#7952C7]">
+                <div className="w-10 h-10 rounded-2xl bg-[#EDE5FF] flex items-center justify-center text-[#7952C7]">
                   <GraduationCap className="w-5 h-5" />
                 </div>
                 <div>
@@ -101,19 +96,13 @@ export default function About() {
               {/* Exact narrative requested by user */}
               <div className="space-y-4 text-base sm:text-lg text-[#68677A] leading-relaxed">
                 <p>
-                  I am currently pursuing my Master of Computer Applications (MCA) at Presidency University.
+                  I am an MCA student and aspiring software developer with a strong interest in Java development, full-stack technologies, cybersecurity and artificial intelligence.
                 </p>
                 <p>
-                  My journey in computer applications has helped me develop an interest in programming, application development and emerging technologies.
+                  I enjoy building practical applications, exploring emerging technologies and solving real-world problems through software development.
                 </p>
-                <p>
-                  I enjoy working on practical projects that combine software development with real-world problem-solving.
-                </p>
-                <p>
-                  My areas of interest include Java development, full-stack development, cybersecurity, computer vision and Generative AI.
-                </p>
-                <p className="font-medium text-[#202033] pt-2">
-                  I believe in continuous learning, experimentation and building useful technology solutions.
+                <p className="font-medium text-[#202033] pt-1">
+                  I continuously work on strengthening my technical knowledge through academic projects and hands-on learning.
                 </p>
               </div>
 
@@ -124,7 +113,7 @@ export default function About() {
               {coreValues.map((val) => (
                 <div 
                   key={val.title}
-                  className="bg-white p-5 rounded-xl border border-[#E8E2F1] shadow-soft-sm hover:shadow-card transition-shadow"
+                  className="bg-white p-5 rounded-2xl border border-[#E8E2F1] shadow-soft-sm hover:shadow-card transition-shadow"
                 >
                   <div className="flex items-center gap-2 mb-2 text-[#7952C7]">
                     <CheckCircle className="w-4 h-4 flex-shrink-0" />
@@ -141,7 +130,7 @@ export default function About() {
 
           {/* Technical Areas of Interest Cards */}
           <div className="lg:col-span-5">
-            <div className="bg-white rounded-2xl p-6 sm:p-7 border border-[#E8E2F1] shadow-card">
+            <div className="bg-white rounded-3xl p-6 sm:p-7 border border-[#E8E2F1] shadow-card">
               
               <div className="flex items-center justify-between mb-6 pb-3 border-b border-[#E8E2F1]">
                 <div className="flex items-center gap-2">
@@ -151,7 +140,7 @@ export default function About() {
                   </h3>
                 </div>
                 <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-[#EDE5FF] text-[#56358E]">
-                  5 Focus Domains
+                  5 Focus Areas
                 </span>
               </div>
 
@@ -161,10 +150,10 @@ export default function About() {
                   return (
                     <div 
                       key={interest.title}
-                      className="group p-3.5 rounded-xl border border-[#E8E2F1] hover:border-[#D7C7F4] bg-[#FAF8FF] hover:bg-white transition-all duration-200"
+                      className="group p-3.5 rounded-2xl border border-[#E8E2F1] hover:border-[#D7C7F4] bg-[#FAF8FF] hover:bg-white transition-all duration-200"
                     >
                       <div className="flex items-start gap-3">
-                        <div className="w-9 h-9 rounded-lg bg-[#EDE5FF] text-[#7952C7] flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+                        <div className="w-9 h-9 rounded-xl bg-[#EDE5FF] text-[#7952C7] flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
                           <Icon className="w-4 h-4" />
                         </div>
                         <div>

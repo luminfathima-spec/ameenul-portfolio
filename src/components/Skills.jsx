@@ -35,7 +35,7 @@ import { FaJava, FaCss3Alt } from 'react-icons/fa6';
 import { VscVscode } from 'react-icons/vsc';
 import { skillCategories } from '../data/portfolio';
 
-// Map each technology to its official icon component
+// Map each technology to its official brand/tech icon
 const getTechIcon = (techName) => {
   switch (techName) {
     case 'Java':
@@ -75,6 +75,7 @@ const getTechIcon = (techName) => {
       return <Eye className="w-5 h-5 text-[#7952C7]" />;
     case 'Generative AI':
       return <Sparkles className="w-5 h-5 text-[#56358E]" />;
+    case 'RAG':
     case 'Retrieval-Augmented Generation (RAG)':
       return <Layers className="w-5 h-5 text-[#7952C7]" />;
     case 'Cybersecurity':
@@ -83,6 +84,7 @@ const getTechIcon = (techName) => {
       return <SiGit className="w-5 h-5 text-[#F05032]" />;
     case 'GitHub':
       return <SiGithub className="w-5 h-5 text-[#202033]" />;
+    case 'VS Code':
     case 'Visual Studio Code':
       return <VscVscode className="w-5 h-5 text-[#007ACC]" />;
     case 'IntelliJ IDEA':
@@ -138,13 +140,13 @@ export default function Skills() {
           {skillCategories.map((category) => (
             <div
               key={category.title}
-              className="bg-white rounded-2xl border border-[#E8E2F1] p-6 shadow-card hover:shadow-card-hover hover:border-[#D7C7F4] transition-all duration-300 flex flex-col justify-between"
+              className="bg-white rounded-3xl border border-[#E8E2F1] p-6 shadow-card hover:shadow-card-hover hover:border-[#D7C7F4] transition-all duration-300 flex flex-col justify-between hover:-translate-y-1"
             >
               <div>
                 
                 {/* Category Header */}
                 <div className="flex items-center gap-3 mb-6 pb-4 border-b border-[#E8E2F1]">
-                  <div className="w-10 h-10 rounded-xl bg-[#EDE5FF] flex items-center justify-center shadow-soft-sm">
+                  <div className="w-10 h-10 rounded-2xl bg-[#EDE5FF] flex items-center justify-center shadow-soft-sm">
                     {getCategoryIcon(category.iconName)}
                   </div>
                   <div>
@@ -162,10 +164,10 @@ export default function Skills() {
                   {category.skills.map((skill) => (
                     <div
                       key={skill.name}
-                      className="group/item flex items-center justify-between p-2.5 rounded-xl bg-[#FAF8FF] hover:bg-[#F3EDFF]/60 border border-[#E8E2F1] hover:border-[#D7C7F4] transition-all duration-200"
+                      className="group/item flex items-center justify-between p-2.5 rounded-2xl bg-[#FAF8FF] hover:bg-[#F3EDFF]/60 border border-[#E8E2F1] hover:border-[#D7C7F4] transition-all duration-200"
                     >
                       <div className="flex items-center gap-3">
-                        <div className="w-8 h-8 rounded-lg bg-white border border-[#E8E2F1] flex items-center justify-center flex-shrink-0 shadow-sm group-hover/item:scale-110 transition-transform">
+                        <div className="w-8 h-8 rounded-xl bg-white border border-[#E8E2F1] flex items-center justify-center flex-shrink-0 shadow-2xs group-hover/item:scale-110 transition-transform">
                           {getTechIcon(skill.name)}
                         </div>
                         <div>
@@ -178,7 +180,7 @@ export default function Skills() {
                         </div>
                       </div>
 
-                      <span className="text-[11px] font-semibold text-[#56358E] px-2 py-0.5 rounded-md bg-[#EDE5FF]/80">
+                      <span className="text-[11px] font-semibold text-[#56358E] px-2.5 py-0.5 rounded-lg bg-[#EDE5FF]/80">
                         {skill.level}
                       </span>
                     </div>

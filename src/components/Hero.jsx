@@ -5,16 +5,27 @@ import {
   Mail, 
   Github, 
   Linkedin, 
-  Sparkles,
+  Download,
   Code2,
   CheckCircle2,
   Shield,
-  Layers
+  Layers,
+  Sparkles
 } from 'lucide-react';
 import { personalInfo } from '../data/portfolio';
 
 export default function Hero() {
+  const [imgSrc, setImgSrc] = useState(personalInfo.profileImage);
   const [imageError, setImageError] = useState(false);
+
+  const handleImageError = () => {
+    // Try fallback jpeg if jpg fails
+    if (imgSrc === personalInfo.profileImage && personalInfo.profileImageFallback) {
+      setImgSrc(personalInfo.profileImageFallback);
+    } else {
+      setImageError(true);
+    }
+  };
 
   const scrollToSection = (e, sectionId) => {
     e.preventDefault();
@@ -75,12 +86,12 @@ export default function Hero() {
               <h2 className="text-2xl sm:text-3xl font-bold text-[#56358E]">
                 {personalInfo.headline}
               </h2>
-              <p className="text-base sm:text-lg font-medium text-[#7952C7]">
+              <p className="text-base sm:text-lg font-semibold text-[#7952C7]">
                 {personalInfo.supportingHeadline}
               </p>
             </div>
 
-            {/* Introduction paragraph */}
+            {/* Professional Introduction paragraph */}
             <p className="text-base sm:text-lg text-[#68677A] leading-relaxed max-w-2xl mb-8">
               {personalInfo.introduction}
             </p>
@@ -103,9 +114,10 @@ export default function Hero() {
                 target="_blank"
                 rel="noopener noreferrer"
                 download="Ameenul_Lumin_Fathima_Resume.pdf"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-[#56358E] bg-[#EDE5FF] hover:bg-[#E2D4FD] border border-[#D7C7F4] transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-[#56358E] bg-[#EDE5FF] hover:bg-[#E2D4FD] border border-[#D7C7F4] shadow-sm transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0"
+                aria-label="Download Ameenul Lumin Fathima M. Resume PDF"
               >
-                <FileText className="w-4 h-4 text-[#7952C7]" />
+                <Download className="w-4 h-4 text-[#7952C7]" />
                 <span>Download Resume</span>
               </a>
 
@@ -158,11 +170,11 @@ export default function Hero() {
 
           </div>
 
-          {/* Right Column: Profile Frame & Elegant Photo Frame */}
+          {/* Right Column: Profile Frame with Original Photograph */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[340px] sm:max-w-[380px] lg:max-w-[400px]">
+            <div className="relative w-full max-w-[320px] sm:max-w-[360px] lg:max-w-[380px]">
               
-              {/* Decorative lavender backdrop frames */}
+              {/* Decorative lavender backdrop frames with subtle rotation */}
               <div 
                 aria-hidden="true" 
                 className="absolute -inset-2.5 bg-gradient-to-tr from-[#EDE5FF] to-[#F7F4FF] rounded-3xl transform rotate-2 -z-10 border border-[#E8E2F1]" 
@@ -172,21 +184,21 @@ export default function Hero() {
                 className="absolute -inset-1 bg-white rounded-3xl -z-10 shadow-soft-lg" 
               />
 
-              {/* Main Image Container */}
-              <div className="relative bg-white rounded-2xl p-3 border border-[#E8E2F1] shadow-card">
+              {/* Main Image Frame Container */}
+              <div className="relative bg-white rounded-3xl p-3 border-2 border-[#E8E2F1] hover:border-[#7952C7]/40 shadow-card transition-all duration-300">
                 
-                {/* Photo or Placeholder with strict dimension preservation */}
-                <div className="relative w-full aspect-[4/5] rounded-xl overflow-hidden bg-gradient-to-br from-[#F7F4FF] to-[#EDE5FF] flex items-center justify-center">
+                {/* Rounded frame maintaining natural facial proportions & crisp quality */}
+                <div className="relative w-full aspect-[4/5] rounded-2xl overflow-hidden bg-gradient-to-br from-[#F7F4FF] to-[#EDE5FF] flex items-center justify-center ring-2 ring-[#7952C7]/20">
                   {!imageError ? (
                     <img
-                      src={personalInfo.profileImage}
+                      src={imgSrc}
                       alt={personalInfo.name}
-                      onError={() => setImageError(true)}
-                      className="w-full h-full object-cover object-center"
+                      onError={handleImageError}
+                      className="w-full h-full object-cover object-[center_18%] transition-transform duration-500 hover:scale-[1.02]"
                       loading="eager"
                     />
                   ) : (
-                    /* Elegant developer avatar placeholder (NO fake faces) */
+                    /* Elegant developer avatar fallback */
                     <div className="w-full h-full flex flex-col items-center justify-between p-6 text-center select-none">
                       <div className="flex justify-between items-center w-full">
                         <span className="text-[11px] font-bold text-[#7952C7] uppercase tracking-wider px-2.5 py-1 bg-white rounded-md border border-[#E8E2F1]">
@@ -208,30 +220,28 @@ export default function Hero() {
                       </div>
 
                       <div className="w-full bg-white/90 backdrop-blur-sm rounded-xl p-3 border border-[#E8E2F1] text-left">
-                        <div className="flex items-center gap-2 text-xs font-medium text-[#202033] mb-1">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-[#7952C7]" />
-                          <span>Photo upload ready</span>
-                        </div>
-                        <p className="text-[11px] text-[#68677A]">
-                          Place your photograph at <code className="text-[#56358E] font-semibold bg-[#EDE5FF] px-1 py-0.5 rounded">public/images/profile.jpg</code>
+                        <p className="text-xs font-semibold text-[#202033]">Profile Photo</p>
+                        <p className="text-[11px] text-[#68677A] mt-0.5">
+                          public/images/profile.jpg
                         </p>
                       </div>
                     </div>
                   )}
                 </div>
 
-                {/* Floating highlight badges on the photo frame */}
-                <div className="absolute -bottom-4 -left-4 bg-white/95 backdrop-blur-sm px-4 py-2.5 rounded-xl border border-[#E8E2F1] shadow-soft-md flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-[#EDE5FF] flex items-center justify-center text-[#7952C7]">
+                {/* Floating highlight badge: Tech Specialties */}
+                <div className="absolute -bottom-4 -left-3 bg-white/95 backdrop-blur-sm px-4 py-2.5 rounded-2xl border border-[#E8E2F1] shadow-soft-md flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-xl bg-[#EDE5FF] flex items-center justify-center text-[#7952C7]">
                     <Shield className="w-4 h-4" />
                   </div>
                   <div>
                     <p className="text-xs font-bold text-[#202033]">Cybersecurity &amp; AI</p>
-                    <p className="text-[11px] text-[#68677A]">Incident Defense &amp; RAG</p>
+                    <p className="text-[11px] text-[#68677A]">Incident Response &amp; RAG</p>
                   </div>
                 </div>
 
-                <div className="absolute -top-3 -right-3 bg-white/95 backdrop-blur-sm px-3.5 py-2 rounded-xl border border-[#E8E2F1] shadow-soft-md flex items-center gap-2">
+                {/* Floating highlight badge: Full-Stack */}
+                <div className="absolute -top-3 -right-3 bg-white/95 backdrop-blur-sm px-3.5 py-2 rounded-2xl border border-[#E8E2F1] shadow-soft-md flex items-center gap-2">
                   <Layers className="w-4 h-4 text-[#7952C7]" />
                   <span className="text-xs font-bold text-[#56358E]">Java &amp; Full-Stack</span>
                 </div>

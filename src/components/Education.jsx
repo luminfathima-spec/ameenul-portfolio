@@ -2,8 +2,6 @@ import React from 'react';
 import { 
   GraduationCap, 
   Building2, 
-  Calendar, 
-  Sparkles, 
   CheckCircle2, 
   Clock,
   BookOpen
@@ -33,7 +31,7 @@ export default function Education() {
         {/* Elegant Vertical Timeline */}
         <div className="relative">
           
-          {/* Vertical central/left timeline connector line */}
+          {/* Vertical central timeline connector line */}
           <div 
             aria-hidden="true" 
             className="absolute left-6 md:left-1/2 top-4 bottom-4 w-0.5 bg-gradient-to-b from-[#7952C7] via-[#D7C7F4] to-[#E8E2F1] -translate-x-1/2 hidden sm:block" 
@@ -65,7 +63,7 @@ export default function Education() {
                   {/* Card Content */}
                   <div className={`w-full sm:w-[calc(50%-32px)] ${isEven ? 'sm:pr-4' : 'sm:pl-4'}`}>
                     <div 
-                      className={`relative bg-white rounded-2xl p-6 sm:p-7 border transition-all duration-300 hover:shadow-card-hover ${
+                      className={`relative bg-white rounded-3xl p-6 sm:p-7 border transition-all duration-300 hover:shadow-card-hover ${
                         item.isCurrent
                           ? 'border-[#7952C7] shadow-soft-md bg-gradient-to-br from-white via-[#FAF8FF] to-[#F7F4FF]'
                           : 'border-[#E8E2F1] shadow-card hover:border-[#D7C7F4]'
@@ -111,7 +109,7 @@ export default function Education() {
                       </div>
 
                       {/* Highlight */}
-                      <div className="text-xs font-semibold text-[#7952C7] bg-[#EDE5FF]/60 px-3 py-1.5 rounded-lg border border-[#E8E2F1] mb-3 inline-block">
+                      <div className="text-xs font-semibold text-[#7952C7] bg-[#EDE5FF]/60 px-3 py-1.5 rounded-xl border border-[#E8E2F1] mb-3 inline-block">
                         {item.highlight}
                       </div>
 
