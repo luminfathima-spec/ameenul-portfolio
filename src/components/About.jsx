@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { 
   Sparkles, 
   Code, 
@@ -7,10 +8,9 @@ import {
   Eye, 
   Bot, 
   GraduationCap, 
-  CheckCircle,
-  Lightbulb
+  CheckCircle, 
+  Lightbulb 
 } from 'lucide-react';
-import { personalInfo } from '../data/portfolio';
 
 export default function About() {
   const technicalInterests = [
@@ -57,30 +57,55 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-20 md:py-28 bg-[#F7F4FF]/70 border-y border-[#E8E2F1]">
+    <section id="about" className="py-20 md:py-28 bg-[#F7F4FF]/70 border-y border-[#E8E2F1] relative overflow-hidden">
+      {/* Background ambient light */}
+      <div 
+        aria-hidden="true" 
+        className="absolute top-1/4 right-[-8%] -z-10 w-[420px] h-[420px] bg-[#EDE5FF]/70 rounded-full blur-3xl pointer-events-none" 
+      />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Heading */}
+        {/* Section Heading with Glowing Accent */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EDE5FF] text-[#56358E] text-xs font-semibold uppercase tracking-wider mb-3">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#EDE5FF] text-[#56358E] text-xs font-semibold uppercase tracking-wider mb-3 shadow-soft-sm border border-[#D7C7F4]"
+          >
             <Sparkles className="w-3.5 h-3.5 text-[#7952C7]" />
             <span>Profile &amp; Background</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#202033] tracking-tight">
+          </motion.div>
+          
+          <motion.h2 
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-3xl sm:text-4xl font-extrabold text-[#202033] tracking-tight"
+          >
             About Me
-          </h2>
-          <div className="w-16 h-1 bg-[#7952C7] mx-auto mt-4 rounded-full" />
+          </motion.h2>
+          
+          <div className="w-16 h-1 bg-gradient-to-r from-[#7952C7] to-[#9B6DFF] mx-auto mt-4 rounded-full" />
         </div>
 
         {/* Content Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
           {/* Main Story Narrative */}
-          <div className="lg:col-span-7 space-y-6 text-left">
-            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E8E2F1] shadow-card">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-7 space-y-6 text-left"
+          >
+            <div className="bg-white rounded-3xl p-6 sm:p-8 border border-[#E8E2F1] shadow-card hover:shadow-card-hover transition-all duration-300">
               
               <div className="flex items-center gap-3 mb-6 pb-4 border-b border-[#E8E2F1]">
-                <div className="w-10 h-10 rounded-2xl bg-[#EDE5FF] flex items-center justify-center text-[#7952C7]">
+                <div className="w-10 h-10 rounded-2xl bg-[#EDE5FF] flex items-center justify-center text-[#7952C7] shadow-soft-sm">
                   <GraduationCap className="w-5 h-5" />
                 </div>
                 <div>
@@ -110,10 +135,14 @@ export default function About() {
 
             {/* Core Values / Work Principles */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {coreValues.map((val) => (
-                <div 
+              {coreValues.map((val, idx) => (
+                <motion.div 
                   key={val.title}
-                  className="bg-white p-5 rounded-2xl border border-[#E8E2F1] shadow-soft-sm hover:shadow-card transition-shadow"
+                  initial={{ opacity: 0, y: 15 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: idx * 0.1 }}
+                  className="bg-white p-5 rounded-2xl border border-[#E8E2F1] shadow-soft-sm hover:shadow-card hover:border-[#9B6DFF]/50 transition-all duration-200"
                 >
                   <div className="flex items-center gap-2 mb-2 text-[#7952C7]">
                     <CheckCircle className="w-4 h-4 flex-shrink-0" />
@@ -122,14 +151,20 @@ export default function About() {
                   <p className="text-xs text-[#68677A] leading-relaxed">
                     {val.description}
                   </p>
-                </div>
+                </motion.div>
               ))}
             </div>
 
-          </div>
+          </motion.div>
 
           {/* Technical Areas of Interest Cards */}
-          <div className="lg:col-span-5">
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-5"
+          >
             <div className="bg-white rounded-3xl p-6 sm:p-7 border border-[#E8E2F1] shadow-card">
               
               <div className="flex items-center justify-between mb-6 pb-3 border-b border-[#E8E2F1]">
@@ -145,15 +180,19 @@ export default function About() {
               </div>
 
               <div className="space-y-3.5">
-                {technicalInterests.map((interest) => {
+                {technicalInterests.map((interest, idx) => {
                   const Icon = interest.icon;
                   return (
-                    <div 
+                    <motion.div 
                       key={interest.title}
-                      className="group p-3.5 rounded-2xl border border-[#E8E2F1] hover:border-[#D7C7F4] bg-[#FAF8FF] hover:bg-white transition-all duration-200"
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.4, delay: idx * 0.08 }}
+                      className="group p-3.5 rounded-2xl border border-[#E8E2F1] hover:border-[#9B6DFF]/50 hover:shadow-glow-sm bg-[#FAF8FF] hover:bg-white transition-all duration-200"
                     >
                       <div className="flex items-start gap-3">
-                        <div className="w-9 h-9 rounded-xl bg-[#EDE5FF] text-[#7952C7] flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+                        <div className="w-9 h-9 rounded-xl bg-[#EDE5FF] text-[#7952C7] flex items-center justify-center flex-shrink-0 group-hover:scale-105 group-hover:bg-[#9B6DFF] group-hover:text-white transition-all">
                           <Icon className="w-4 h-4" />
                         </div>
                         <div>
@@ -165,13 +204,13 @@ export default function About() {
                           </p>
                         </div>
                       </div>
-                    </div>
+                    </motion.div>
                   );
                 })}
               </div>
 
             </div>
-          </div>
+          </motion.div>
 
         </div>
 

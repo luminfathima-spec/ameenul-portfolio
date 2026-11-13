@@ -1,40 +1,59 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { 
   GraduationCap, 
   Building2, 
   CheckCircle2, 
   Clock,
-  BookOpen
+  BookOpen,
+  Sparkles
 } from 'lucide-react';
 import { educationList } from '../data/portfolio';
 
 export default function Education() {
   return (
-    <section id="education" className="py-20 md:py-28 bg-white">
+    <section id="education" className="py-20 md:py-28 bg-white relative overflow-hidden">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Heading */}
+        {/* Section Heading with Glowing Accent */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#EDE5FF] text-[#56358E] text-xs font-semibold uppercase tracking-wider mb-3">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#EDE5FF] text-[#56358E] text-xs font-semibold uppercase tracking-wider mb-3 shadow-soft-sm border border-[#D7C7F4]"
+          >
             <GraduationCap className="w-3.5 h-3.5 text-[#7952C7]" />
             <span>Academic Qualifications</span>
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#202033] tracking-tight">
+          </motion.div>
+          
+          <motion.h2 
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="text-3xl sm:text-4xl font-extrabold text-[#202033] tracking-tight"
+          >
             My Education
-          </h2>
+          </motion.h2>
+          
           <p className="mt-3 text-base text-[#68677A]">
             Formal computer applications and software engineering degree programs.
           </p>
-          <div className="w-16 h-1 bg-[#7952C7] mx-auto mt-4 rounded-full" />
+          <div className="w-16 h-1 bg-gradient-to-r from-[#7952C7] to-[#9B6DFF] mx-auto mt-4 rounded-full" />
         </div>
 
-        {/* Elegant Vertical Timeline */}
+        {/* Elegant Vertical Timeline with Animated Flow */}
         <div className="relative">
           
-          {/* Vertical central timeline connector line */}
-          <div 
+          {/* Animated vertical central timeline connector line */}
+          <motion.div 
+            initial={{ scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             aria-hidden="true" 
-            className="absolute left-6 md:left-1/2 top-4 bottom-4 w-0.5 bg-gradient-to-b from-[#7952C7] via-[#D7C7F4] to-[#E8E2F1] -translate-x-1/2 hidden sm:block" 
+            className="absolute left-6 md:left-1/2 top-4 bottom-4 w-1 bg-gradient-to-b from-[#7952C7] via-[#9B6DFF] to-[#E8E2F1] -translate-x-1/2 hidden sm:block origin-top rounded-full shadow-glow-sm" 
           />
 
           <div className="space-y-10 sm:space-y-12">
@@ -49,21 +68,33 @@ export default function Education() {
                   }`}
                 >
                   {/* Timeline Badge Node */}
-                  <div className="hidden sm:flex absolute left-1/2 -translate-x-1/2 top-6 w-12 h-12 rounded-2xl bg-white border-2 border-[#7952C7] items-center justify-center text-[#7952C7] shadow-soft z-10">
+                  <motion.div 
+                    initial={{ scale: 0 }}
+                    whileInView={{ scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.2 }}
+                    className="hidden sm:flex absolute left-1/2 -translate-x-1/2 top-6 w-12 h-12 rounded-2xl bg-white border-2 border-[#7952C7] items-center justify-center text-[#7952C7] shadow-soft hover:shadow-glow-sm z-10"
+                  >
                     {item.isCurrent ? (
-                      <Clock className="w-6 h-6 text-[#7952C7] animate-pulse" />
+                      <Clock className="w-6 h-6 text-[#9B6DFF] animate-pulse" />
                     ) : (
                       <GraduationCap className="w-6 h-6 text-[#56358E]" />
                     )}
-                  </div>
+                  </motion.div>
 
                   {/* Spacer for 2-column alternating layout */}
                   <div className="hidden sm:block w-1/2" />
 
-                  {/* Card Content */}
-                  <div className={`w-full sm:w-[calc(50%-32px)] ${isEven ? 'sm:pr-4' : 'sm:pl-4'}`}>
+                  {/* Card Content with Smooth Slide Reveal */}
+                  <motion.div 
+                    initial={{ opacity: 0, x: isEven ? -25 : 25 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: index * 0.2 }}
+                    className={`w-full sm:w-[calc(50%-32px)] ${isEven ? 'sm:pr-4' : 'sm:pl-4'}`}
+                  >
                     <div 
-                      className={`relative bg-white rounded-3xl p-6 sm:p-7 border transition-all duration-300 hover:shadow-card-hover ${
+                      className={`relative bg-white rounded-3xl p-6 sm:p-7 border transition-all duration-300 hover:shadow-card-hover hover:border-[#9B6DFF]/50 ${
                         item.isCurrent
                           ? 'border-[#7952C7] shadow-soft-md bg-gradient-to-br from-white via-[#FAF8FF] to-[#F7F4FF]'
                           : 'border-[#E8E2F1] shadow-card hover:border-[#D7C7F4]'
@@ -74,7 +105,7 @@ export default function Education() {
                         <span 
                           className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold tracking-wide ${
                             item.isCurrent
-                              ? 'bg-[#7952C7] text-white shadow-soft-sm'
+                              ? 'bg-gradient-to-r from-[#7952C7] to-[#9B6DFF] text-white shadow-soft-sm'
                               : 'bg-[#EDE5FF] text-[#56358E]'
                           }`}
                         >
@@ -118,7 +149,7 @@ export default function Education() {
                         {item.description}
                       </p>
                     </div>
-                  </div>
+                  </motion.div>
 
                 </div>
               );

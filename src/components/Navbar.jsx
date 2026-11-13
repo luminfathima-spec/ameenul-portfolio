@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, FileText, ArrowUpRight } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { personalInfo } from '../data/portfolio';
 
 export default function Navbar() {
@@ -106,7 +107,7 @@ export default function Navbar() {
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-1 lg:gap-2" aria-label="Main Navigation">
+          <nav className="hidden md:flex items-center gap-1 lg:gap-1.5" aria-label="Main Navigation">
             {personalInfo.navLinks.map((link) => {
               const sectionId = link.href.substring(1);
               const isActive = activeSection === sectionId;
@@ -118,17 +119,21 @@ export default function Navbar() {
                     e.preventDefault();
                     handleNavClick(link.href);
                   }}
-                  className={`relative px-3.5 py-2 text-sm font-medium rounded-lg transition-all duration-200 ${
+                  className={`relative px-3.5 py-1.5 text-sm font-medium rounded-xl transition-colors duration-200 ${
                     isActive
-                      ? 'text-[#7952C7] font-semibold bg-[#EDE5FF]/60'
-                      : 'text-[#68677A] hover:text-[#202033] hover:bg-[#F7F4FF]'
+                      ? 'text-[#7952C7] font-semibold'
+                      : 'text-[#68677A] hover:text-[#202033]'
                   }`}
                   aria-current={isActive ? 'page' : undefined}
                 >
-                  {link.name}
                   {isActive && (
-                    <span className="absolute bottom-1 left-3.5 right-3.5 h-0.5 bg-[#7952C7] rounded-full" />
+                    <motion.span
+                      layoutId="activeNavPill"
+                      className="absolute inset-0 bg-[#EDE5FF]/80 border border-[#D7C7F4]/60 rounded-xl -z-10 shadow-sm"
+                      transition={{ type: 'spring', stiffness: 350, damping: 30 }}
+                    />
                   )}
+                  <span className="relative z-10">{link.name}</span>
                 </a>
               );
             })}
@@ -136,18 +141,20 @@ export default function Navbar() {
 
           {/* Resume CTA (Desktop) */}
           <div className="hidden md:flex items-center gap-3">
-            <a
+            <motion.a
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
               href={personalInfo.resumePath}
               target="_blank"
               rel="noopener noreferrer"
               download="Ameenul_Lumin_Fathima_Resume.pdf"
-              className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-[#7952C7] bg-[#EDE5FF] hover:bg-[#7952C7] hover:text-white rounded-xl border border-[#D7C7F4] transition-all duration-200 shadow-sm hover:shadow"
+              className="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-[#7952C7] bg-[#EDE5FF] hover:bg-[#7952C7] hover:text-white rounded-xl border border-[#D7C7F4] transition-colors duration-200 shadow-soft-sm hover:shadow-glow-sm"
               aria-label="Download Ameenul Lumin Fathima M. Resume PDF"
             >
               <FileText className="w-4 h-4" />
               <span>Resume</span>
               <ArrowUpRight className="w-3.5 h-3.5 opacity-70" />
-            </a>
+            </motion.a>
           </div>
 
           {/* Mobile Menu Toggle Button */}
@@ -176,57 +183,67 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Navigation Drawer / Overlay */}
-      {isOpen && (
-        <div 
-          className="fixed inset-0 top-[65px] bg-[#202033]/30 backdrop-blur-sm z-40 md:hidden"
-          onClick={() => setIsOpen(false)}
-        >
-          <div
-            className="bg-white border-b border-[#E8E2F1] shadow-soft-lg px-6 py-6 max-h-[calc(100vh-70px)] overflow-y-auto"
-            onClick={(e) => e.stopPropagation()}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 top-[65px] bg-[#202033]/30 backdrop-blur-sm z-40 md:hidden"
+            onClick={() => setIsOpen(false)}
           >
-            <nav className="flex flex-col gap-1.5" aria-label="Mobile Navigation">
-              {personalInfo.navLinks.map((link) => {
-                const sectionId = link.href.substring(1);
-                const isActive = activeSection === sectionId;
-                return (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      handleNavClick(link.href);
-                    }}
-                    className={`flex items-center justify-between px-4 py-3 rounded-xl text-base font-medium transition-colors ${
-                      isActive
-                        ? 'text-[#7952C7] bg-[#EDE5FF] font-semibold'
-                        : 'text-[#202033] hover:bg-[#F7F4FF]'
-                    }`}
-                  >
-                    <span>{link.name}</span>
-                    {isActive && <div className="w-2 h-2 rounded-full bg-[#7952C7]" />}
-                  </a>
-                );
-              })}
+            <motion.div
+              initial={{ y: -20, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: -20, opacity: 0 }}
+              transition={{ type: 'spring', damping: 25, stiffness: 280 }}
+              className="bg-white border-b border-[#E8E2F1] shadow-soft-lg px-6 py-6 max-h-[calc(100vh-70px)] overflow-y-auto"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <nav className="flex flex-col gap-1.5" aria-label="Mobile Navigation">
+                {personalInfo.navLinks.map((link) => {
+                  const sectionId = link.href.substring(1);
+                  const isActive = activeSection === sectionId;
+                  return (
+                    <a
+                      key={link.name}
+                      href={link.href}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleNavClick(link.href);
+                      }}
+                      className={`flex items-center justify-between px-4 py-3 rounded-xl text-base font-medium transition-colors ${
+                        isActive
+                          ? 'text-[#7952C7] bg-[#EDE5FF] font-semibold'
+                          : 'text-[#202033] hover:bg-[#F7F4FF]'
+                      }`}
+                    >
+                      <span>{link.name}</span>
+                      {isActive && <div className="w-2 h-2 rounded-full bg-[#7952C7]" />}
+                    </a>
+                  );
+                })}
 
-              <div className="pt-4 mt-2 border-t border-[#E8E2F1]">
-                <a
-                  href={personalInfo.resumePath}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  download="Ameenul_Lumin_Fathima_Resume.pdf"
-                  onClick={() => setIsOpen(false)}
-                  className="w-full flex items-center justify-center gap-2 px-5 py-3 text-base font-semibold text-white bg-[#7952C7] hover:bg-[#56358E] rounded-xl shadow-soft transition-colors"
-                >
-                  <FileText className="w-5 h-5" />
-                  <span>Download Resume (PDF)</span>
-                  <ArrowUpRight className="w-4 h-4" />
-                </a>
-              </div>
-            </nav>
-          </div>
-        </div>
-      )}
+                <div className="pt-4 mt-2 border-t border-[#E8E2F1]">
+                  <a
+                    href={personalInfo.resumePath}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    download="Ameenul_Lumin_Fathima_Resume.pdf"
+                    onClick={() => setIsOpen(false)}
+                    className="w-full flex items-center justify-center gap-2 px-5 py-3 text-base font-semibold text-white bg-[#7952C7] hover:bg-[#56358E] rounded-xl shadow-soft transition-colors"
+                  >
+                    <FileText className="w-5 h-5" />
+                    <span>Download Resume (PDF)</span>
+                    <ArrowUpRight className="w-4 h-4" />
+                  </a>
+                </div>
+              </nav>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 }

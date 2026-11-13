@@ -14,6 +14,13 @@ export const personalInfo = {
   supportingHeadline: "MCA Student | Java & Full-Stack Development Enthusiast",
   availability: "Open to learning opportunities and software development opportunities.",
   
+  rotatingTitles: [
+    "Software Developer",
+    "Java Developer",
+    "Full-Stack Development Enthusiast",
+    "Cybersecurity & AI Enthusiast"
+  ],
+  
   introduction: 
     "I am an MCA student and aspiring software developer with a strong interest in Java development, full-stack technologies, cybersecurity and artificial intelligence. I enjoy building practical applications, exploring emerging technologies and solving real-world problems through software development. I continuously work on strengthening my technical knowledge through academic projects and hands-on learning.",
   
@@ -197,62 +204,62 @@ export const skillCategories = [
     title: "Programming Languages",
     iconName: "Code2",
     skills: [
-      { name: "Java", level: "Core Language", tag: "Backend & Systems" },
-      { name: "Python", level: "Language", tag: "AI & Scripting" },
-      { name: "JavaScript", level: "Language", tag: "Web & Full-Stack" },
-      { name: "PHP", level: "Language", tag: "Web Services" },
-      { name: "SQL", level: "Query Language", tag: "Data Management" },
+      { name: "Java", level: "Core Language", tag: "Backend & Systems", description: "Object-oriented architectures, multithreading, collections, and enterprise applications." },
+      { name: "Python", level: "Language", tag: "AI & Scripting", description: "Applied machine learning, data processing, backend scripting, and FastAPI services." },
+      { name: "JavaScript", level: "Language", tag: "Web & Full-Stack", description: "Modern ES6+ syntax, asynchronous programming, DOM manipulation, and dynamic web apps." },
+      { name: "PHP", level: "Language", tag: "Web Services", description: "Server-side rendering, relational database integrations, and dynamic web applications." },
+      { name: "SQL", level: "Query Language", tag: "Data Management", description: "Complex relational queries, indexing, joins, aggregations, and schema design." },
     ]
   },
   {
-    title: "Frontend",
+    title: "Frontend Development",
     iconName: "Layout",
     skills: [
-      { name: "HTML", level: "Semantic Markup", tag: "Structure" },
-      { name: "CSS", level: "Modern Styling", tag: "Presentation" },
-      { name: "React.js", level: "Component Library", tag: "UI Framework" },
-      { name: "Tailwind CSS", level: "Utility Framework", tag: "Design System" },
+      { name: "HTML", level: "Semantic Markup", tag: "Structure", description: "Modern semantic HTML5 documents, accessibility (a11y), and web structure standards." },
+      { name: "CSS", level: "Modern Styling", tag: "Presentation", description: "Responsive layouts, Flexbox, CSS Grid, keyframe animations, and custom scrollbars." },
+      { name: "React.js", level: "Component Library", tag: "UI Framework", description: "Functional components, custom hooks, reactive state workflows, and SPA architectures." },
+      { name: "Tailwind CSS", level: "Utility Framework", tag: "Design System", description: "Rapid utility-first styling, design system tokens, responsive variants, and dark/light modes." },
     ]
   },
   {
-    title: "Backend",
+    title: "Backend Development",
     iconName: "Server",
     skills: [
-      { name: "Node.js", level: "Runtime", tag: "JavaScript Server" },
-      { name: "Express.js", level: "Web Framework", tag: "REST APIs" },
-      { name: "FastAPI", level: "API Framework", tag: "Python Microservices" },
-      { name: "Java Backend Development", level: "Enterprise", tag: "OOP & Services" },
+      { name: "Node.js", level: "Runtime", tag: "JavaScript Server", description: "High-performance event-driven server runtimes and npm module management." },
+      { name: "Express.js", level: "Web Framework", tag: "REST APIs", description: "RESTful API routing, middleware pipelines, error handling, and JSON payloads." },
+      { name: "FastAPI", level: "API Framework", tag: "Python Microservices", description: "Modern, high-performance asynchronous Python microservices with OpenAPI generation." },
+      { name: "Java Backend Development", level: "Enterprise", tag: "OOP & Services", description: "Modular service architecture, object modeling, and server-side business logic." },
     ]
   },
   {
     title: "Databases",
     iconName: "Database",
     skills: [
-      { name: "MongoDB", level: "NoSQL Document DB", tag: "Document Store" },
-      { name: "MySQL", level: "Relational RDBMS", tag: "Structured Data" },
-      { name: "PostgreSQL", level: "Object-Relational", tag: "ACID Compliant" },
+      { name: "MongoDB", level: "NoSQL Document DB", tag: "Document Store", description: "BSON document schemas, aggregation pipelines, and high-velocity NoSQL storage." },
+      { name: "MySQL", level: "Relational RDBMS", tag: "Structured Data", description: "ACID transactions, foreign key relational schemas, and query optimization." },
+      { name: "PostgreSQL", level: "Object-Relational", tag: "ACID Compliant", description: "Robust relational data integrity, advanced indexing, and enterprise scalability." },
     ]
   },
   {
     title: "AI & Cybersecurity",
     iconName: "BrainCircuit",
     skills: [
-      { name: "Generative AI", level: "Emerging Tech", tag: "LLMs & Multimodal" },
-      { name: "RAG", level: "Architecture", tag: "Knowledge Retrieval" },
-      { name: "Computer Vision", level: "Discipline", tag: "Image Processing" },
-      { name: "Scikit-learn", level: "ML Library", tag: "Predictive Models" },
-      { name: "Cybersecurity", level: "Specialization", tag: "Threat Analysis & Defense" },
+      { name: "Generative AI", level: "Emerging Tech", tag: "LLMs & Multimodal", description: "Leveraging large language models, structured generation, and multimodal reasoning." },
+      { name: "RAG", level: "Architecture", tag: "Knowledge Retrieval", description: "Retrieval-Augmented Generation architectures combining vector context with LLMs." },
+      { name: "Computer Vision", level: "Discipline", tag: "Image Processing", description: "Image analysis pipelines, object detection concepts, and automated visual triage." },
+      { name: "Scikit-learn", level: "ML Library", tag: "Predictive Models", description: "Feature engineering, classification (Random Forest, Decision Tree), and model evaluation." },
+      { name: "Cybersecurity", level: "Specialization", tag: "Threat Analysis & Defense", description: "Network intrusion detection, threat vector identification, and incident response workflows." },
     ]
   },
   {
-    title: "Tools",
+    title: "Developer Tools",
     iconName: "Wrench",
     skills: [
-      { name: "Git", level: "Version Control", tag: "Distributed VCS" },
-      { name: "GitHub", level: "Collaboration", tag: "Code Hosting & CI" },
-      { name: "VS Code", level: "IDE", tag: "Development" },
-      { name: "IntelliJ IDEA", level: "Java IDE", tag: "Enterprise Dev" },
-      { name: "Antigravity IDE", level: "AI Agentic IDE", tag: "Agentic Workflows" },
+      { name: "Git", level: "Version Control", tag: "Distributed VCS", description: "Branching strategies, commit hygiene, merge resolution, and distributed versioning." },
+      { name: "GitHub", level: "Collaboration", tag: "Code Hosting & CI", description: "Remote repository hosting, issue tracking, project collaboration, and CI deployments." },
+      { name: "VS Code", level: "IDE", tag: "Development", description: "Modern developer workflow customization, debugging, extensions, and workspace tooling." },
+      { name: "IntelliJ IDEA", level: "Java IDE", tag: "Enterprise Dev", description: "Enterprise Java code analysis, refactoring, build tooling, and test debugging." },
+      { name: "Antigravity IDE", level: "AI Agentic IDE", tag: "Agentic Workflows", description: "Agentic development environments, prompt engineering, and intelligent assistants." },
     ]
   }
 ];
