@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 420" width="600" height="420">
+  <defs>
+    <linearGradient id="bg3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F7F4FF"/>
+    </linearGradient>
+    <linearGradient id="primaryGrad3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#7952C7"/>
+      <stop offset="100%" stop-color="#56358E"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="420" rx="16" fill="url(#bg3)"/>
+  <rect x="12" y="12" width="576" height="396" rx="12" fill="none" stroke="#E8E2F1" stroke-width="2"/>
+  <rect x="20" y="20" width="560" height="380" rx="8" fill="none" stroke="#EDE5FF" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+  <!-- Header Banner -->
+  <rect x="40" y="45" width="160" height="30" rx="6" fill="#EDE5FF"/>
+  <text x="120" y="65" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="600" fill="#7952C7" text-anchor="middle">COURSE CERTIFICATION</text>
+
+  <!-- Title & Organization -->
+  <text x="300" y="140" font-family="'Plus Jakarta Sans', sans-serif" font-size="22" font-weight="700" fill="#202033" text-anchor="middle">The Blockchain Trilemma</text>
+  <text x="300" y="175" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="600" fill="#7952C7" text-anchor="middle">Decentralized Systems &amp; Web3 Architecture</text>
+  
+  <!-- Recipient -->
+  <text x="300" y="225" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="400" fill="#68677A" text-anchor="middle">Awarded to</text>
+  <text x="300" y="255" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" font-weight="700" fill="#202033" text-anchor="middle">Ameenul Lumin Fathima M.</text>
+
+  <!-- Divider Line -->
+  <line x1="180" y1="280" x2="420" y2="280" stroke="#E8E2F1" stroke-width="1.5"/>
+
+  <!-- Footer Seal Badge -->
+  <circle cx="300" cy="335" r="26" fill="#7952C7" opacity="0.1"/>
+  <circle cx="300" cy="335" r="20" fill="url(#primaryGrad3)"/>
+  <path d="M292 335 L298 341 L309 330" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="300" y="380" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="500" fill="#8D8C9F" text-anchor="middle">Replace with official file: public/certificates/blockchain-certificate.png</text>
+</svg>
