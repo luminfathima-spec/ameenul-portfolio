@@ -45,7 +45,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-xs text-[#68677A] max-w-sm">
-              MCA Student &bull; Software Developer &bull; Java &amp; Full-Stack Enthusiast
+              Software Developer &bull; MCA Student &bull; Java &amp; Full-Stack Development
             </p>
           </div>
 

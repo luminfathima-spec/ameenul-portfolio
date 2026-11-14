@@ -7,27 +7,29 @@
 
 export const personalInfo = {
   name: "Ameenul Lumin Fathima M.",
-  title: "Software Developer | MCA Student | Java & Full-Stack Development Enthusiast",
-  subtitle: "Software Developer | MCA Student | Java & Full-Stack Development Enthusiast",
+  title: "Software Developer | MCA Student | Java & Full-Stack Development",
+  subtitle: "Software Developer | MCA Student | Java & Full-Stack Development",
   greeting: "Hello, I'm",
-  headline: "Software Developer",
-  supportingHeadline: "MCA Student | Java & Full-Stack Development Enthusiast",
-  availability: "Open to learning opportunities and software development opportunities.",
+  headline: "Software Developer | MCA Student | Java & Full-Stack Development",
+  primaryRole: "Software Developer",
+  supportingInterests: ["Cybersecurity", "Artificial Intelligence", "Computer Vision"],
+  availability: "Open to software development opportunities & technical roles",
   
   rotatingTitles: [
     "Software Developer",
     "Java Developer",
-    "Full-Stack Development Enthusiast",
-    "Cybersecurity & AI Enthusiast"
+    "Full-Stack Developer",
+    "MCA Postgraduate Student"
   ],
   
   introduction: 
-    "I am an MCA student and aspiring software developer with a strong interest in Java development, full-stack technologies, cybersecurity and artificial intelligence. I enjoy building practical applications, exploring emerging technologies and solving real-world problems through software development. I continuously work on strengthening my technical knowledge through academic projects and hands-on learning.",
+    "I am a Software Developer and MCA student with a strong focus on Java development and modern full-stack web technologies. I enjoy building practical, reliable applications and solving complex problems with clean, scalable code. Alongside core software engineering, I actively explore cybersecurity, artificial intelligence, and computer vision as supporting technical interests.",
   
   aboutMe: [
-    "I am an MCA student and aspiring software developer with a strong interest in Java development, full-stack technologies, cybersecurity and artificial intelligence.",
-    "I enjoy building practical applications, exploring emerging technologies and solving real-world problems through software development.",
-    "I continuously work on strengthening my technical knowledge through academic projects and hands-on learning."
+    "I am a Software Developer currently pursuing my Master of Computer Applications (MCA) at Presidency University, having earned my Bachelor of Computer Applications (BCA) from Vijayanagara Sri Krishnadevaraya University (VSKU). My academic education has built a solid foundation in data structures, algorithms, database systems, and object-oriented architecture.",
+    "My primary development focus centers on Java and full-stack web development. I am passionate about writing clean, maintainable code, developing modular services, and building responsive user interfaces with modern frameworks and reliable backend systems.",
+    "Through hands-on projects—such as building incident response workflows with Generative AI in SentinelAI-X, engineering community distribution systems in ResQMeal, and analyzing intrusion detection algorithms—I continually turn theoretical concepts into practical software solutions.",
+    "My career goal is to contribute effectively to an innovative engineering team, building scalable systems that solve real-world problems while continually growing as a professional software engineer."
   ],
 
   profileImage: "/images/profile.jpg",
@@ -177,7 +179,7 @@ export const projectList = [
     id: "genai-borderguard",
     title: "GenAI BorderGuard",
     category: "Generative AI | Computer Vision",
-    status: "Concept / In Development",
+    status: "Proposed",
     description:
       "Proposed Generative AI-based border surveillance concept involving computer vision and Gemini models.",
     technologies: ["Python", "Google Gemini", "Computer Vision"],

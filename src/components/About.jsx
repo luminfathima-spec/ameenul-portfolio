@@ -118,16 +118,19 @@ export default function About() {
                 </div>
               </div>
 
-              {/* Exact narrative requested by user */}
+              {/* Meaningful Narrative: Academic Background, Development Focus, Practical Learning & Career Goals */}
               <div className="space-y-4 text-base sm:text-lg text-[#68677A] leading-relaxed">
                 <p>
-                  I am an MCA student and aspiring software developer with a strong interest in Java development, full-stack technologies, cybersecurity and artificial intelligence.
+                  I am a <strong className="text-[#202033] font-semibold">Software Developer</strong> currently pursuing my Master of Computer Applications (MCA) at Presidency University, following my Bachelor of Computer Applications (BCA) from Vijayanagara Sri Krishnadevaraya University (VSKU). My academic journey has built a strong foundation in core computer science principles—including data structures, algorithms, relational database design, and object-oriented architecture.
                 </p>
                 <p>
-                  I enjoy building practical applications, exploring emerging technologies and solving real-world problems through software development.
+                  My primary development focus centers on <strong className="text-[#56358E] font-semibold">Java engineering and full-stack web development</strong>. I enjoy writing clean, modular, and maintainable code, architecting reliable backend services, and building responsive, user-friendly frontend interfaces.
                 </p>
-                <p className="font-medium text-[#202033] pt-1">
-                  I continuously work on strengthening my technical knowledge through academic projects and hands-on learning.
+                <p>
+                  I prioritize practical learning through hands-on development. Whether engineering cybersecurity incident response workflows with Generative AI in <span className="text-[#7952C7] font-semibold">SentinelAI-X</span>, building full-stack platforms like <span className="text-[#7952C7] font-semibold">ResQMeal</span>, or training machine learning models for intrusion detection, I continually bridge theory and real-world execution.
+                </p>
+                <p className="font-medium text-[#202033] pt-1 border-t border-[#F7F4FF]">
+                  My career goal is to contribute effectively as a software developer within a forward-thinking engineering team, designing scalable systems, solving challenging technical problems, and continuously growing with modern enterprise technologies.
                 </p>
               </div>
 

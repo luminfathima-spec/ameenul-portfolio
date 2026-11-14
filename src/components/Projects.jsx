@@ -202,12 +202,12 @@ export default function Projects() {
                   <div className="p-6 flex-1 flex flex-col justify-between">
                     <div>
                       
-                      {/* Category & Status Pill */}
+                      {/* Category & Status Pill with High Readability */}
                       <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-                        <span className="text-[11px] font-bold text-[#7952C7] uppercase tracking-wider bg-[#EDE5FF] px-2.5 py-0.5 rounded-md">
+                        <span className="text-[11px] font-bold text-[#56358E] uppercase tracking-wider bg-[#EDE5FF] px-2.5 py-0.5 rounded-md border border-[#D7C7F4]/60">
                           {project.category}
                         </span>
-                        <span className="text-[11px] font-semibold text-[#56358E] bg-[#FAF8FF] px-2.5 py-0.5 rounded-md border border-[#E8E2F1]">
+                        <span className="text-[11px] font-bold text-[#7952C7] bg-[#FAF8FF] px-2.5 py-0.5 rounded-md border border-[#E8E2F1]">
                           {project.status}
                         </span>
                       </div>

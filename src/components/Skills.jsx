@@ -222,7 +222,7 @@ export default function Skills() {
                       </div>
                     </div>
 
-                    {/* Skill List items with interactive hover feedback */}
+                    {/* Skill List items with smooth, readable hover feedback */}
                     <div className="space-y-3">
                       {category.skills.map((skill) => {
                         const isCardActive = activeSkill === skill.name;
@@ -235,31 +235,31 @@ export default function Skills() {
                             onFocus={() => setActiveSkill(skill.name)}
                             onBlur={() => setActiveSkill(null)}
                             tabIndex={0}
-                            className="group/item p-3 rounded-2xl bg-[#FAF8FF] hover:bg-white border border-[#E8E2F1] hover:border-[#9B6DFF]/50 hover:shadow-glow-sm transition-all duration-200 cursor-pointer focus:outline-none focus:border-[#7952C7]"
+                            className="group/item p-3.5 rounded-2xl bg-[#FAF8FF] hover:bg-white border border-[#E8E2F1] hover:border-[#9B6DFF]/50 hover:shadow-glow-sm transition-all duration-200 cursor-pointer focus:outline-none focus:border-[#7952C7]"
                           >
-                            <div className="flex items-center justify-between">
-                              <div className="flex items-center gap-3">
-                                <div className="w-8 h-8 rounded-xl bg-white border border-[#E8E2F1] flex items-center justify-center flex-shrink-0 shadow-2xs group-hover/item:scale-115 group-hover/item:rotate-3 transition-transform duration-200">
+                            <div className="flex items-center justify-between gap-2">
+                              <div className="flex items-center gap-3 min-w-0">
+                                <div className="w-8 h-8 rounded-xl bg-white border border-[#E8E2F1] flex items-center justify-center flex-shrink-0 shadow-2xs group-hover/item:scale-105 transition-transform duration-200">
                                   {getTechIcon(skill.name)}
                                 </div>
-                                <div>
-                                  <p className="text-sm font-bold text-[#202033] group-hover/item:text-[#7952C7] transition-colors">
+                                <div className="min-w-0">
+                                  <p className="text-sm font-bold text-[#202033] group-hover/item:text-[#7952C7] transition-colors truncate">
                                     {skill.name}
                                   </p>
-                                  <p className="text-[11px] text-[#68677A]">
+                                  <p className="text-[11px] text-[#68677A] truncate">
                                     {skill.tag}
                                   </p>
                                 </div>
                               </div>
 
-                              <span className="text-[11px] font-semibold text-[#56358E] px-2.5 py-0.5 rounded-lg bg-[#EDE5FF]/80 group-hover/item:bg-[#9B6DFF] group-hover/item:text-white transition-colors">
+                              <span className="text-[11px] font-semibold text-[#56358E] px-2.5 py-0.5 rounded-lg bg-[#EDE5FF]/80 group-hover/item:bg-[#7952C7] group-hover/item:text-white transition-colors flex-shrink-0">
                                 {skill.level}
                               </span>
                             </div>
 
-                            {/* Accurate Technical Insight Tooltip / Description */}
+                            {/* Accurate Technical Insight Tooltip / Description with High Readability */}
                             {skill.description && (
-                              <p className="text-[11px] text-[#68677A] mt-2 pt-2 border-t border-[#F3EDFF] leading-relaxed group-hover/item:text-[#202033] transition-colors">
+                              <p className="text-xs text-[#68677A] mt-2 pt-2 border-t border-[#F3EDFF] leading-relaxed group-hover/item:text-[#202033] transition-colors">
                                 {skill.description}
                               </p>
                             )}

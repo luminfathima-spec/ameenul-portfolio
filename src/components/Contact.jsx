@@ -209,7 +209,7 @@ export default function Contact() {
             Open to Learning &amp; Technical Collaboration
           </h3>
           <p className="text-sm sm:text-base text-[#68677A] max-w-2xl mx-auto leading-relaxed mb-6">
-            Thank you for reviewing my portfolio. As an MCA postgraduate actively building skills across Java, full-stack systems, cybersecurity and AI applications, I welcome conversations regarding software development opportunities and technical projects.
+            Thank you for reviewing my portfolio. As a software developer with focused expertise in Java and full-stack development, and supporting interests in cybersecurity and artificial intelligence, I welcome conversations regarding software engineering opportunities, technical projects, and professional collaboration.
           </p>
           <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#56358E] bg-white px-4 py-2 rounded-xl border border-[#E8E2F1] shadow-sm">
             <span>Bengaluru &amp; Pan-India Opportunities</span>

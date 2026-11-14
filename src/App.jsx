@@ -14,7 +14,7 @@ import AnimatedGradientBackground from './components/AnimatedGradientBackground'
 
 export default function App() {
   return (
-    <div className="relative min-h-screen bg-white text-[#202033] flex flex-col font-sans selection:bg-[#EDE5FF] selection:text-[#56358E]">
+    <div className="relative min-h-screen bg-white text-[#202033] flex flex-col font-sans selection:bg-[#EDE5FF] selection:text-[#56358E] overflow-x-hidden">
       {/* Interactive Ambient Gradient Background */}
       <AnimatedGradientBackground />
 

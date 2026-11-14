@@ -76,10 +76,10 @@ export default function Hero() {
         className="absolute bottom-6 left-[-6%] -z-10 w-[450px] h-[450px] bg-gradient-to-tr from-[#EDE5FF]/70 via-[#F7F4FF] to-[#7952C7]/15 rounded-full blur-3xl pointer-events-none animate-float-medium" 
       />
 
-      {/* Floating Tech Icons Layer */}
-      <FloatingTechIcons />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Floating Tech Icons Layer (Anchored to content container on desktop) */}
+        <FloatingTechIcons />
+
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           
           {/* Left Column: Introductions, Animated Typography, and CTAs */}
@@ -110,40 +110,93 @@ export default function Hero() {
               <Sparkles className="w-4 h-4 text-[#9B6DFF] animate-pulse" />
             </motion.p>
 
-            {/* Animated Name Reveal: Staggered Blur-to-Clear Words */}
-            <h1 className="text-3xl sm:text-5xl lg:text-5xl xl:text-6xl font-extrabold text-[#202033] tracking-tight leading-[1.15] mb-4 flex flex-wrap gap-x-3 gap-y-1">
-              {nameWords.map((word, idx) => (
+            {/* Animated Name Reveal: Staggered Blur-to-Clear Words with Bound Initial */}
+            <h1 className="text-3xl sm:text-5xl lg:text-5xl xl:text-6xl font-extrabold text-[#202033] tracking-tight leading-[1.15] mb-3">
+              <span className="inline-flex flex-wrap gap-x-2.5 sm:gap-x-3.5 gap-y-1 items-baseline">
                 <motion.span
-                  key={idx}
                   initial={{ opacity: 0, y: 18, filter: 'blur(6px)' }}
                   animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                  transition={{ 
-                    duration: 0.6, 
-                    delay: 0.2 + idx * 0.12,
-                    ease: [0.2, 0.65, 0.3, 0.9] 
-                  }}
-                  className={idx === 1 ? "text-transparent bg-clip-text bg-gradient-to-r from-[#7952C7] via-[#9B6DFF] to-[#56358E]" : ""}
+                  transition={{ duration: 0.6, delay: 0.2, ease: [0.2, 0.65, 0.3, 0.9] }}
                 >
-                  {word}
+                  Ameenul
                 </motion.span>
-              ))}
+                <motion.span
+                  initial={{ opacity: 0, y: 18, filter: 'blur(6px)' }}
+                  animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                  transition={{ duration: 0.6, delay: 0.32, ease: [0.2, 0.65, 0.3, 0.9] }}
+                  className="text-transparent bg-clip-text bg-gradient-to-r from-[#7952C7] via-[#9B6DFF] to-[#56358E]"
+                >
+                  Lumin
+                </motion.span>
+                {/* Bound together so 'M.' never wraps alone to a separate line */}
+                <span className="inline-flex whitespace-nowrap gap-x-2.5 sm:gap-x-3.5">
+                  <motion.span
+                    initial={{ opacity: 0, y: 18, filter: 'blur(6px)' }}
+                    animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                    transition={{ duration: 0.6, delay: 0.44, ease: [0.2, 0.65, 0.3, 0.9] }}
+                  >
+                    Fathima
+                  </motion.span>
+                  <motion.span
+                    initial={{ opacity: 0, y: 18, filter: 'blur(6px)' }}
+                    animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
+                    transition={{ duration: 0.6, delay: 0.56, ease: [0.2, 0.65, 0.3, 0.9] }}
+                  >
+                    M.
+                  </motion.span>
+                </span>
+              </span>
             </h1>
 
-            {/* Rotating / Morphing Professional Title */}
-            <div className="h-10 sm:h-12 mb-6 flex items-center overflow-hidden">
+            {/* Professional Headline: Software Developer | MCA Student | Java & Full-Stack Development */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="mb-4"
+            >
+              <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-[#56358E] tracking-tight leading-snug">
+                <span>Software Developer</span>
+                <span className="text-[#9B6DFF] font-light mx-1.5 sm:mx-2">|</span>
+                <span>MCA Student</span>
+                <span className="text-[#9B6DFF] font-light mx-1.5 sm:mx-2">|</span>
+                <span className="text-[#7952C7]">Java &amp; Full-Stack Development</span>
+              </h2>
+
+              {/* Supporting Interests: Cybersecurity, AI & Computer Vision */}
+              <div className="flex items-center gap-2 mt-2.5 flex-wrap">
+                <span className="text-xs font-semibold uppercase tracking-wider text-[#7952C7]">
+                  Supporting Interests:
+                </span>
+                <div className="inline-flex items-center gap-1.5 flex-wrap">
+                  <span className="px-2.5 py-0.5 rounded-lg bg-[#EDE5FF] text-[#56358E] text-xs font-semibold border border-[#D7C7F4]/60">
+                    Cybersecurity
+                  </span>
+                  <span className="px-2.5 py-0.5 rounded-lg bg-[#EDE5FF] text-[#56358E] text-xs font-semibold border border-[#D7C7F4]/60">
+                    Artificial Intelligence
+                  </span>
+                  <span className="px-2.5 py-0.5 rounded-lg bg-[#EDE5FF] text-[#56358E] text-xs font-semibold border border-[#D7C7F4]/60">
+                    Computer Vision
+                  </span>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Rotating / Morphing Focus Title */}
+            <div className="h-8 sm:h-9 mb-4 flex items-center overflow-hidden">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={titleIndex}
-                  initial={{ opacity: 0, y: 22, filter: 'blur(4px)' }}
+                  initial={{ opacity: 0, y: 16, filter: 'blur(4px)' }}
                   animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-                  exit={{ opacity: 0, y: -22, filter: 'blur(4px)' }}
-                  transition={{ duration: 0.45, ease: "easeInOut" }}
-                  className="flex items-center gap-2"
+                  exit={{ opacity: 0, y: -16, filter: 'blur(4px)' }}
+                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  className="inline-flex items-center gap-2 px-3 py-1 rounded-xl bg-white/90 border border-[#E8E2F1] shadow-2xs"
                 >
-                  <span className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#56358E]">
-                    {titles[titleIndex]}
+                  <span className="w-2 h-2 rounded-full bg-[#7952C7] animate-pulse" />
+                  <span className="text-xs sm:text-sm font-semibold text-[#56358E]">
+                    Current Focus: <span className="text-[#7952C7]">{titles[titleIndex]}</span>
                   </span>
-                  <span className="w-2 h-6 bg-[#9B6DFF] rounded-full animate-pulse" />
                 </motion.div>
               </AnimatePresence>
             </div>
@@ -254,7 +307,7 @@ export default function Hero() {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.2, 0.65, 0.3, 0.9] }}
-              className="relative w-full max-w-[320px] sm:max-w-[360px] lg:max-w-[380px]"
+              className="relative w-full max-w-[280px] sm:max-w-[340px] md:max-w-[360px] lg:max-w-[380px]"
             >
               
               {/* Futuristic Orbit Ring with Rotating Glow Node */}
